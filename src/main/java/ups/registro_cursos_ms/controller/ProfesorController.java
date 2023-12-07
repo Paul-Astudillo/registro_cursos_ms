@@ -9,6 +9,7 @@ import ups.registro_cursos_ms.services.ProfesorService;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/micro2/profesor/")
@@ -32,4 +33,9 @@ public class ProfesorController {
         return ResponseEntity.ok(profesorService.listProfesores());
     }
 
+    @GetMapping("/buscar")
+    public ResponseEntity<Profesor> buscarProfesor(@RequestParam String cedula) {
+        Optional<Profesor> profesorEncontrado = profesorService.buscarProfesor(cedula);
+        return profesorEncontrado.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
