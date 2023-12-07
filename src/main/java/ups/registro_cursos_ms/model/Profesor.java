@@ -17,21 +17,18 @@ public class Profesor {
     private String especialidad;
     private String telefono;
 
-    // Relación uno a muchos con Curso
-    @OneToMany(mappedBy = "profesor", cascade = CascadeType.ALL)
-    private List<Curso> cursos;
+
 
     public Profesor() {
 
     }
 
-    public Profesor(String cedula, String nombre, String apellido, String especialidad, String telefono, List<Curso> cursos) {
+    public Profesor(String cedula, String nombre, String apellido, String especialidad, String telefono) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.especialidad = especialidad;
         this.telefono = telefono;
-        this.cursos = cursos;
     }
 
     public String getCedula() {
@@ -72,13 +69,5 @@ public class Profesor {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public List<Curso> getCursos() {
-        return cursos;
-    }
-
-    public void setCursos(List<Curso> cursos) {
-        this.cursos = cursos;
     }
 }
