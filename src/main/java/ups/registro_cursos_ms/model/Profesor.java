@@ -17,18 +17,20 @@ public class Profesor {
     private String especialidad;
     private String telefono;
 
+    private String correoElectronico;
 
 
     public Profesor() {
 
     }
 
-    public Profesor(String cedula, String nombre, String apellido, String especialidad, String telefono) {
+    public Profesor(String cedula, String nombre, String apellido, String especialidad, String telefono, String correoElectronico) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.especialidad = especialidad;
         this.telefono = telefono;
+        this.correoElectronico = correoElectronico;
     }
 
     public String getCedula() {
@@ -69,5 +71,13 @@ public class Profesor {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
     }
 }
